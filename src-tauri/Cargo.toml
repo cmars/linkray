@@ -1,13 +1,13 @@
 [package]
-name = "app"
+name = "linkray"
 version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
-license = ""
+description = "Linkray"
+authors = ["Casey Marshall <me@cmars.tech>"]
+license = "MPL-2.0"
 repository = ""
-default-run = "app"
+default-run = "linkray"
 edition = "2021"
-rust-version = "1.60"
+rust-version = "1.75"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -18,6 +18,12 @@ tauri-build = { version = "1.5.1", features = [] }
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
 tauri = { version = "1.5.4", features = [] }
+tokio = { version = "1.35.1", features = ["full"] }
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
+
+# TODO: figure out how to bundle ddcp into an app
+ddcp = { version = "0.2", path = "../../ddcp" }
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem and the built-in dev server is disabled.
